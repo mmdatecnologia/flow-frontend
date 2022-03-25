@@ -1,23 +1,96 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
+  "name": "jcpm-checkout-front",
+  "version": "0.0.1",
+  "author": "Bossabox",
+  "contributors": [
+    "Mateus Macedo dos Anjos",
+    "Caio Leonardo Mendes de Sousa",
+    "Claudio Alcantara",
+    "Cleber Carvalho",
+    "Flavio Vinicius Miranda",
+    "Hudson Von Zuben",
+    "Stefania Silva"
+  ],
+  "license": "UNLICENSED",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install",
+    "test:cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "test": "jest --watch --coverage --detectOpenHandles",
+    "test:cov": "jest --detectOpenHandles --runInBand --forceExit --coverage",
+    "test:e2e": "start-server-and-test start http://localhost:3000 cypress",
+    "test:e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless",
+    "snyk": "snyk test",
+    "storybook": "start-storybook -p 6006 -s ./public",
+    "build-storybook": "build-storybook -s public",
+    "changelog:minor": "standard-version --release-as minor && auto-changelog -p -u --commit-limit false --hide-credit --template changelog-template.hbs",
+    "changelog:major": "standard-version --release-as major && auto-changelog -p -u --commit-limit false --hide-credit --template changelog-template.hbs",
+    "changelog:patch": "standard-version --release-as patch && auto-changelog -p -u --commit-limit false --hide-credit --template changelog-template.hbs",
+    "changelog:alpha": "standard-version --prerelease alpha && auto-changelog -p -u --commit-limit false --hide-credit --template changelog-template.hbs"
   },
   "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.2",
+    "@stitches/react": "^1.2.7",
     "next": "12.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "stitches-normalize-css": "^1.2.0"
   },
   "devDependencies": {
-    "@types/node": "17.0.23",
-    "@types/react": "17.0.43",
-    "eslint": "8.11.0",
+    "@babel/core": "^7.17.5",
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/builder-webpack5": "^6.4.19",
+    "@storybook/manager-webpack5": "^6.4.19",
+    "@storybook/react": "^6.4.19",
+    "@storybook/testing-library": "^0.0.9",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.3",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.1",
+    "@types/node": "17.0.21",
+    "@types/react": "17.0.39",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "auto-changelog": "^2.4.0",
+    "babel-loader": "^8.2.3",
+    "cypress": "^9.5.1",
+    "eslint": "8.10.0",
     "eslint-config-next": "12.1.0",
-    "typescript": "4.6.3"
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-storybook": "^0.5.7",
+    "git-cz": "^4.8.0",
+    "husky": "^7.0.0",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.3.5",
+    "node-mocks-http": "^1.11.0",
+    "prettier": "^2.5.1",
+    "snyk": "^1.864.0",
+    "standard-version": "^9.3.2",
+    "start-server-and-test": "^1.14.0",
+    "typescript": "4.6.2",
+    "webpack": "^5.70.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  },
+  "standard-version": {
+    "skip": {
+      "changelog": true,
+      "commit": true
+    }
   }
 }
