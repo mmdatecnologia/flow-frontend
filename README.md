@@ -1,34 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# JCPM Checkout Front
 
-## Getting Started
+## Ajustes e melhorias
 
-First, run the development server:
+O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
+
+- [ ] some_task
+
+## 💻 Pré-requisitos
+
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
+
+- Você instalou a versão `nodejs 16`
+  - sugerimos o uso do `nvm`
+- Você instalou a versão mais recente de `yarn`
+- Você tem uma máquina `<Linux / Mac>`
+
+## 🚀 Clonando e Instalando `<checkout-frontend>`
+
+Para clonar o repositorio `<checkout-frontend>`, siga estas etapas:
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone git@gitlab.com:jcpm-checkout/frontend.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Para instalar as dependencias `<checkout-frontend>`, siga estas etapas:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn
+```
+## ⚙️ Configurando ambiente `<checkout-frontend>`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+---
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## ☕ Usando `<checkout-frontend>`
 
-## Learn More
+Para usar `<checkout-frontend>`, siga estas etapas:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# development
+$ yarn dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
+## Testes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# unit tests
+$ yarn test:watch
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# test coverage
+$ yarn test:cov
+
+# e2e tests cypress local
+$ yarn test:cypress
+
+# e2e tests cypress with server
+$ yarn test:e2e
+
+# e2e tests cypress with server
+$ yarn test:e2e:headless
+
+
+```
+
+## Gerando arquivo de change log
+
+```bash
+auto-changelog --template changelog-template.hbs -p -u --commit-limit false 
+```
+
+ou
+
+```bash
+yarn changelog 
+```
+
+- auto-changelog — comando node module
+- --template changelog-template.hbs — parâmetro para configurar um arquivo de padrão para suas mensagens de changelog
+- -p — use a versão SEMVER do package.json como a versão mais recente
+- -u — inclui mudanças não lançadas no changelog
+- --commit-limit false — remova o limite sobre o número de commits por lançamento no changelog (padrão: 3)
