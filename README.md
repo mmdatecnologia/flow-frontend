@@ -1,4 +1,4 @@
-# JCPM Checkout Front
+# Flow frontend
 
 ## Ajustes e melhorias
 
@@ -10,74 +10,77 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-- Você instalou a versão `nodejs 16`
-  - sugerimos o uso do `nvm`
-- Você instalou a versão mais recente de `yarn`
-- Você tem uma máquina `<Linux / Mac>`
+- Você instalou a versão `nodejs16`
+- Você instalou a versão mais recente de `npm`
+- Você tem uma máquina `<Windows / Linux / Mac>`
 
-## 🚀 Clonando e Instalando `<checkout-frontend>`
+## ☕ Clonando e Instalando ``<flow-frontend>``
 
-Para clonar o repositorio `<checkout-frontend>`, siga estas etapas:
+Para clonar o repositorio `<flow-frontend>`, siga estas etapas:
 
 ```bash
-git clone git@gitlab.com:jcpm-checkout/frontend.git
+git clone git@github.com:mmdatecnologia/flow-frontend.git
 ```
 
-Para instalar as dependencias `<checkout-frontend>`, siga estas etapas:
+Para instalar as dependencias `<flow-frontend>`, siga estas etapas:
 
 ```bash
-yarn
+npm run install
 ```
-## ⚙️ Configurando ambiente `<checkout-frontend>`
+## ⚙️ Configurando ambiente `<flow-frontend>`
 
----
+Utilizar o arquivo `src/config/env/example.env` como base para a criação dos seguintes arquivos de configuração:
+- `development.env`
+- `test.env`
 
-## ☕ Usando `<checkout-frontend>`
+> Aplicação utiliza schema de validação `src/config/validation/validation.ts`, caso não sejam providas a configurações requeridas, resultará em erro.
 
-Para usar `<checkout-frontend>`, siga estas etapas:
+## 🚀 Usando `<flow-frontend>`
+
+Para usar `<flow-frontend>`, siga estas etapas:
 
 ```bash
+# Unix users
 
 # development
-$ yarn dev
+$ npm run start
 
+# watch mode
+$ npm run start:dev
+
+# debug watch mode
+$ npm run start:debug
+
+# ***Windows users***
+
+# development
+$ npm run start:win
+
+# watch mode
+$ npm run start:dev:win
+
+# debug watch mode
+$ npm run start:debug:win
 ```
 
 ## Testes
 
 ```bash
 # unit tests
-$ yarn test:watch
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
 
 # test coverage
-$ yarn test:cov
-
-# e2e tests cypress local
-$ yarn test:cypress
-
-# e2e tests cypress with server
-$ yarn test:e2e
-
-# e2e tests cypress with server
-$ yarn test:e2e:headless
-
-
+$ npm run test:cov
 ```
 
 ## Gerando arquivo de change log
 
 ```bash
-auto-changelog --template changelog-template.hbs -p -u --commit-limit false 
+$ npm run changelog:minor # x.y.x
+$ npm run changelog:major # y.x.x
+$ npm run changelog:patch # x.x.y
+$ npm run changelog:alpha # x.x.x-alpha.0
 ```
-
-ou
-
-```bash
-yarn changelog 
-```
-
-- auto-changelog — comando node module
-- --template changelog-template.hbs — parâmetro para configurar um arquivo de padrão para suas mensagens de changelog
-- -p — use a versão SEMVER do package.json como a versão mais recente
-- -u — inclui mudanças não lançadas no changelog
-- --commit-limit false — remova o limite sobre o número de commits por lançamento no changelog (padrão: 3)

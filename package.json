@@ -1,18 +1,11 @@
 {
   "name": "jcpm-checkout-front",
   "version": "0.0.2-alpha.0",
-  "author": "Bossabox",
-  "contributors": [
-    "Mateus Macedo dos Anjos",
-    "Caio Leonardo Mendes de Sousa",
-    "Claudio Alcantara",
-    "Cleber Carvalho",
-    "Flavio Vinicius Miranda",
-    "Hudson Von Zuben",
-    "Stefania Silva"
-  ],
+  "description": "backend for flow project",
+  "author": "MMDA Tecnologia<mmdatecnologia@gmail.com>",
+  "private": false,
   "license": "UNLICENSED",
-  "private": true,
+  "repository": "git@github.com:mmdatecnologia/flow-backend.git",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
